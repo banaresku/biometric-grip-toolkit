@@ -1,5 +1,5 @@
 # Biometric Grip Pipeline
-## FWB 800X / Sport Shooting — Full Development Stack
+## FWB 800X — Full Development Stack
 
 ---
 

@@ -1,5 +1,5 @@
 # Modular Adjustable Grip
-## FWB 800X / Universal Sport Shooting Grip System
+## FWB 800X — Universal Sport Grip System
 
 ---
 

@@ -10,7 +10,7 @@ grip_calculator.py
 Выдаёт:   grip_dimensions.json (параметры для FreeCAD Spreadsheet)
 
 Биометрические формулы основаны на антропометрических
-пропорциях спортивных рукояток (ISSF 10m air rifle/pistol).
+пропорциях спортивных рукояток (ISSF Olympic sport).
 
 Использование:
     python grip_calculator.py hand_scan_params.json

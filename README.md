@@ -1,6 +1,6 @@
 # Biometric Grip Toolkit
 
-**Open source tools for generating ergonomic hand interface geometry from biometric measurements.**
+**Under Development** | Open source tools for generating ergonomic hand interface geometry from biometric measurements.
 
 From hand measurement to printable 3D geometry — for any object where fit to the human hand matters.
 
@@ -80,7 +80,7 @@ Includes an objective coach fitting protocol: observable anatomical markers only
 
 ## Demonstrated Application
 
-The first complete implementation targets **Olympic 10m air rifle/pistol sport equipment grips** — specifically the FWB 800X platform. This is a licensed sport accessory, commercially available from manufacturers including MeshPro (Germany) and Rink. The toolkit automates and open-sources what these services provide at €260-350 with 8-10 week lead times using closed algorithms.
+The first complete implementation targets **Olympic sport equipment grips** — specifically the FWB 800X platform. This is a licensed sport accessory, commercially available from manufacturers including MeshPro (Germany) and Rink. The toolkit automates and open-sources what these services provide at €260-350 with 8-10 week lead times using closed algorithms.
 
 Sport equipment grips are non-functional accessories. They attach to, but do not constitute, any regulated component of the equipment.
 

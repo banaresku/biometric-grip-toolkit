@@ -13,7 +13,7 @@ Three independent open source tools for generating ergonomic grip geometry from 
 BiometriScan  →  ParamGrip  →  VoroShell
 ```
 
-Primary target: FWB 800X air rifle grip (ISSF Olympic 10m air rifle).
+Primary target: FWB 800X grip (ISSF Olympic sport).
 Designed to generalize to any hand-held object.
 
 Philosophy: open source, free stack, accessible to any club worldwide.

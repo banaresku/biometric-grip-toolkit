@@ -1,0 +1,75 @@
+{
+  "_comment": "VoroShell параметры для спортивной рукоятки ISSF",
+  "_units": "мм если не указано иное",
+
+  "rib": {
+    "thickness_min_mm": 5.0,
+    "thickness_max_mm": 7.0,
+    "cross_section": "oval",
+    "aspect_ratio": 1.6,
+    "_note": "Овальное сечение распределяет давление при длительном хвате. Круглое — некомфортно. Ниже 5мм — хрупко и ощущение проволоки."
+  },
+
+  "global": {
+    "randomness": 0.75,
+    "solidify_offset": -1.0,
+    "transition_width_mm": 4.0,
+    "_note": "transition_width — плавный переход между зонами разной плотности"
+  },
+
+  "zones": {
+    "palm_contact": {
+      "scale": 4.5,
+      "density": "medium",
+      "rib_thickness_mm": 5.5,
+      "_location": "боковые панели, основной контакт с ладонью",
+      "_note": "Баланс дренаж/сцепление. Не слишком крупно (проволока), не слишком мелко (нет вентиляции)"
+    },
+    "finger_contact": {
+      "scale": 5.5,
+      "density": "dense",
+      "rib_thickness_mm": 6.0,
+      "_location": "зона пальцев и thenar",
+      "_note": "Плотнее — ощущение что держишь, а не скелет из проволоки"
+    },
+    "backstrap_outer": {
+      "scale": 3.0,
+      "density": "open",
+      "rib_thickness_mm": 5.0,
+      "_location": "тыльная сторона рукоятки",
+      "_note": "Максимально открытая — там нет контакта с ладонью. Только структура, минимум веса."
+    },
+    "thumb_shelf": {
+      "scale": 5.0,
+      "density": "medium_dense",
+      "rib_thickness_mm": 5.5,
+      "_location": "упор большого пальца M2",
+      "_note": "Чуть плотнее боковых панелей — большой палец несёт нагрузку"
+    },
+    "solid": {
+      "scale": 0,
+      "density": "solid",
+      "_location": "монтажная площадка FWB, отверстия под винты ±6мм, нижний торец",
+      "_note": "Без Voronoi. Структурные зоны."
+    }
+  },
+
+  "scale_by_grip_size": {
+    "_note": "Размер ячеек масштабируется под размер руки. Крупная ладонь = крупнее ячейки = лучше дренаж.",
+    "XXS": 0.85,
+    "XS":  0.90,
+    "S":   0.95,
+    "M":   1.00,
+    "L":   1.05,
+    "XL":  1.10
+  },
+
+  "print_notes": {
+    "min_wall_voronoi_mm": 1.5,
+    "min_wall_solid_mm": 2.5,
+    "min_wall_mounting_mm": 4.0,
+    "recommended_layer_height_mm": 0.15,
+    "recommended_material": "PETG или PBT",
+    "sandblast": "рекомендуется после печати — матовая поверхность рёбер улучшает сцепление на влажной руке"
+  }
+}

@@ -1,6 +1,14 @@
 # Local working context — not for publishing
 README-TODO.md
 
+# BiometriScan outputs
+*_params.json
+*_grip_dims.json
+*_debug.jpg
+top_view.jpg
+side_view.jpg
+photos/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

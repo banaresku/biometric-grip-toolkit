@@ -46,9 +46,19 @@ If your printer has multi-material: assign black to the first layer only.
 
 ## Material
 
-**PETG** — recommended. Dimensionally stable, low warp, matte surface with standard settings.
+Print with whatever you have — PLA, PETG, ABS all work. The one thing that matters: **the printed cell size must match the configured value (30mm)**. The pipeline uses these cells as the metric reference, so dimensional accuracy is not cosmetic.
 
-Avoid: PLA (warps over time, especially in sunlight), silk/glossy finishes (glare kills detection).
+Each material has its failure mode:
+
+| Material | Risk | Mitigation |
+|---|---|---|
+| PLA | Warps under heat (car, direct sun) — cells shrink or distort | Store flat, keep out of heat; verify after printing |
+| PETG | Minimal warp, good baseline choice | Standard settings |
+| ABS | Significant warp on large flat prints without enclosure | Use enclosure, brim, controlled cooling |
+
+Silk, glossy, or metallic finishes cause specular reflections that kill ArUco detection — use matte filament or matte topcoat.
+
+**Verification:** measure a few cells with calipers after printing. If they read 29.5–30.5mm, you're fine. If they're systematically off, scale the SVG to compensate before reprinting.
 
 Layer height: 0.2mm or finer. Infill: 20%+ for rigidity. No supports needed.
 

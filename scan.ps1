@@ -12,7 +12,7 @@ param(
     [Parameter(Position=1)]
     [string]$SideView = "",
     [float]$Confidence = 0.3,
-    [string]$Board = "7x9_30mm",
+    [string]$Board = "9x11_30mm",
     [switch]$Flip,
     [switch]$Rebuild
 )
@@ -44,8 +44,8 @@ $RunArgs = @(
     $ImageTag,
     "1_biometriscan/analyze_photo.py",
     "/photos/$TopViewName",
-    "--board", $Board,
-    "--confidence", $Confidence
+    "--plate", $Board,
+    "--confidence", $Confidence.ToString([System.Globalization.CultureInfo]::InvariantCulture)
 )
 
 if ($Flip) {

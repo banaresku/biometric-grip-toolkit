@@ -16,6 +16,9 @@ BiometriScan  →  ParamGrip  →  VoroShell
 Primary target: precision sport equipment grips (ISSF Olympic sport, first implementations).
 Designed to generalize to any hand-held object.
 
+Brand: **BioGrip** — name of the protocol/methodology. The toolkit is its open reference implementation.
+Products compliant with the protocol may identify as "BioGrip-fitted".
+
 Philosophy: open source, free stack, accessible to any club worldwide.
 License: CC BY-SA 4.0.
 

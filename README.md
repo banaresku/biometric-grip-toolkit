@@ -1,4 +1,4 @@
-# Biometric Grip Toolkit
+# Biometric Grip Toolkit — BioGrip Protocol
 
 Every action that depends on how a human hand holds something is constrained by the fit of that interface. A surgeon whose instrument handle doesn't match their hand fatigues faster and loses fine motor precision over a long procedure. An athlete whose equipment was shaped to population averages compensates unconsciously on every movement — not through conscious error, but through the quiet, constant work of muscles correcting for a geometry that was never theirs. A coach in a small club cannot replicate the fitting expertise of a national federation or a hospital ergonomics department.
 
@@ -8,7 +8,7 @@ Historically, closing that gap required a specialist, expensive equipment, weeks
 
 That barrier is falling. The same measurement and fabrication pipeline that required institutional backing five years ago now runs on a laptop, a phone camera, a sub-$2,000 handheld scanner, and a desktop 3D printer available at any maker space or school. The expertise that was locked inside proprietary workflows is becoming reproducible.
 
-**This toolkit is an open implementation of that pipeline** — built initially for precision sport equipment grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
+**This toolkit is the open reference implementation of the BioGrip protocol** — a biometric fitting method for hand-held equipment, built initially for precision sport equipment grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
 
 → [Demo results — pipeline running on a real hand photo](demo/)
 
@@ -201,6 +201,8 @@ This is noted not as a disclaimer but as an honest account of how the project ca
 **CC BY-SA 4.0** — Use freely, modify freely, distribute freely.  
 Modifications must be shared under the same license.  
 Commercial use requires attribution and open sourcing of derivatives.
+
+Products and services built using this protocol may identify themselves as **BioGrip-fitted**. Use of this designation implies compliance with the measurement and fitting protocol documented here.
 
 ---
 

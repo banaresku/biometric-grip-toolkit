@@ -15,14 +15,22 @@ Photo protocol:
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
 import mediapipe as mp
+from mediapipe.tasks import python as mp_tasks
+from mediapipe.tasks.python import vision as mp_vision
 
 from plate_config import PlateConfig, select_plate
+
+_MODEL_PATH = Path(os.environ.get(
+    'MEDIAPIPE_MODEL_PATH',
+    '/opt/mediapipe/hand_landmarker.task',
+))
 
 CYLINDER_DIAMETERS_MM = [28, 32, 36, 40, 44, 48]
 
@@ -184,31 +192,44 @@ def _scale_px_per_mm(image, H):
 
 def detect_hand(image, confidence=0.3):
     """
-    Detect hand with MediaPipe. Returns 21 (x_px, y_px) tuples.
+    Detect hand with MediaPipe Tasks API. Returns 21 (x_px, y_px) tuples.
 
     IMPORTANT: wrist Y in mm is derived from ChArUco homography, not assumed.
     MediaPipe wrist landmark (0) may be partially occluded by plate edge —
     use it for X position only; Y baseline comes from homography.
     """
-    mp_hands = mp.solutions.hands
+    if not _MODEL_PATH.exists():
+        raise FileNotFoundError(
+            f"Hand landmarker model not found: {_MODEL_PATH}\n"
+            f"  Run: Invoke-WebRequest https://storage.googleapis.com/mediapipe-models/"
+            f"hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task "
+            f"-OutFile {_MODEL_PATH}"
+        )
+
     h, w = image.shape[:2]
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    with mp_hands.Hands(
-        static_image_mode=True,
-        max_num_hands=1,
-        min_detection_confidence=confidence,
-    ) as hands:
-        result = hands.process(rgb)
+    options = mp_vision.HandLandmarkerOptions(
+        base_options=mp_tasks.BaseOptions(model_asset_path=str(_MODEL_PATH)),
+        num_hands=1,
+        min_hand_detection_confidence=confidence,
+        min_hand_presence_confidence=confidence,
+        min_tracking_confidence=confidence,
+    )
 
-    if not result.multi_hand_landmarks:
+    detector = mp_vision.HandLandmarker.create_from_options(options)
+    mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
+    result = detector.detect(mp_image)
+    detector.close()
+
+    if not result.hand_landmarks:
         raise RuntimeError(
             f"MediaPipe: no hand detected (confidence={confidence}).\n"
             f"  Try --confidence 0.1 or check lighting."
         )
 
-    lm = result.multi_hand_landmarks[0].landmark
-    side = result.multi_handedness[0].classification[0].label
+    lm = result.hand_landmarks[0]
+    side = result.handedness[0][0].category_name if result.handedness else "Unknown"
     print(f"  MediaPipe: {len(lm)} landmarks ({side} hand)")
     return [(l.x * w, l.y * h) for l in lm]
 

@@ -1,6 +1,9 @@
 # Local working context — not for publishing
 README-TODO.md
 
+# MediaPipe models (baked into Docker — not committed)
+1_biometriscan/models/
+
 # BiometriScan outputs
 *_params.json
 *_grip_dims.json

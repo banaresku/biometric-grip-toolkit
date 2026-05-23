@@ -8,7 +8,7 @@ Historically, closing that gap required a specialist, expensive equipment, weeks
 
 That barrier is falling. The same measurement and fabrication pipeline that required institutional backing five years ago now runs on a laptop, a phone camera, a sub-$2,000 handheld scanner, and a desktop 3D printer available at any maker space or school. The expertise that was locked inside proprietary workflows is becoming reproducible.
 
-**This toolkit is the open reference implementation of the BioGrip protocol** — a biometric fitting method for hand-held equipment, built initially for precision sport equipment grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
+**This toolkit is the first working definition of BioGrip** — an open methodology describing the action set for translating anatomical measurements into grip geometry. The tools are free and replaceable; the method is what persists. Built initially for precision sport equipment grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
 
 → [Demo results — pipeline running on a real hand photo](demo/)
 

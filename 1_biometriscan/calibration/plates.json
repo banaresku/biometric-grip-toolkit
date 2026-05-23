@@ -1,5 +1,5 @@
 {
-  "default": "7x9_30mm",
+  "default": "9x11_30mm",
   "plates": [
     {
       "name": "A4_15mm",
@@ -25,7 +25,7 @@
     },
     {
       "name": "7x9_30mm",
-      "description": "7x9 grid, 30mm squares, 210x270mm — our main field plate, printed on rigid substrate",
+      "description": "7x9 grid, 30mm squares, 210x270mm — legacy mirrored plate",
       "squares_x": 7,
       "squares_y": 9,
       "square_mm": 30.0,
@@ -33,6 +33,17 @@
       "aruco_dict": "DICT_4X4_250",
       "wrist_baseline_y_mm": 225.0,
       "file": null
+    },
+    {
+      "name": "9x11_30mm",
+      "description": "9x11 grid, 30mm squares, 270x330mm — main plate v2, correct orientation, 49 markers",
+      "squares_x": 9,
+      "squares_y": 11,
+      "square_mm": 30.0,
+      "marker_mm": 21.0,
+      "aruco_dict": "DICT_4X4_250",
+      "wrist_baseline_y_mm": 285.0,
+      "file": "charuco_9x11_30mm.svg"
     }
   ]
 }

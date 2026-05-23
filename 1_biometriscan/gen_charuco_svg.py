@@ -18,13 +18,14 @@ import numpy as np
 
 
 def generate_charuco_svg(
-    squares_x: int = 7,
-    squares_y: int = 9,
+    squares_x: int = 9,
+    squares_y: int = 11,
     square_mm: float = 30.0,
     marker_mm: float = 21.0,
     dict_id: int = cv2.aruco.DICT_4X4_250,
-    out_path: str = "1_biometriscan/calibration/charuco_A4_30mm.svg",
+    out_path: str = "1_biometriscan/calibration/charuco_9x11_30mm.svg",
     border_bits: int = 1,
+    wrist_y_mm: float = None,
 ):
     dictionary = cv2.aruco.getPredefinedDictionary(dict_id)
 
@@ -102,6 +103,19 @@ def generate_charuco_svg(
             f' text-anchor="{anchor}" dominant-baseline="{baseline}">{label}</text>'
         )
 
+    # Wrist baseline reference line (dashed, red)
+    if wrist_y_mm is not None:
+        wy = oy + wrist_y_mm
+        lines.append(
+            f'<line x1="{ox}" y1="{wy}" x2="{ox + board_w}" y2="{wy}"'
+            f' stroke="red" stroke-width="0.6" stroke-dasharray="3,2"/>'
+        )
+        lines.append(
+            f'<text x="{ox + board_w + 1}" y="{wy}"'
+            f' font-family="monospace" font-size="2.5mm" fill="red"'
+            f' dominant-baseline="middle">wrist</text>'
+        )
+
     # Info line centered in the bottom strip
     info = (f'{board_w:.0f}x{board_h:.0f}mm  {squares_x}x{squares_y}sq'
             f'  sq={square_mm:.0f}mm  mk={marker_mm:.0f}mm  DICT_4X4_250')
@@ -127,11 +141,13 @@ def generate_charuco_svg(
 
 def main():
     p = argparse.ArgumentParser(description="Generate ChArUco SVG for printing")
-    p.add_argument('--squares-x', type=int, default=7)
-    p.add_argument('--squares-y', type=int, default=9)
+    p.add_argument('--squares-x', type=int, default=9)
+    p.add_argument('--squares-y', type=int, default=11)
     p.add_argument('--square-mm', type=float, default=30.0)
     p.add_argument('--marker-mm', type=float, default=21.0)
-    p.add_argument('--out', default='1_biometriscan/calibration/charuco_A4_30mm.svg')
+    p.add_argument('--wrist-y', type=float, default=285.0,
+                   help='Wrist baseline Y from board top (mm). 0 to omit.')
+    p.add_argument('--out', default='1_biometriscan/calibration/charuco_9x11_30mm.svg')
     args = p.parse_args()
 
     generate_charuco_svg(
@@ -140,6 +156,7 @@ def main():
         square_mm=args.square_mm,
         marker_mm=args.marker_mm,
         out_path=args.out,
+        wrist_y_mm=args.wrist_y if args.wrist_y > 0 else None,
     )
 
 

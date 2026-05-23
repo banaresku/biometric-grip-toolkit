@@ -4,7 +4,8 @@ Check what world positions ChArUco assigns to found corners,
 and verify that custom ids= parameter works in CharucoBoard.
 """
 import sys, cv2, numpy as np
-sys.path.insert(0, '1_biometriscan')
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from plate_config import get_plate
 
 plate = get_plate('7x9_30mm')

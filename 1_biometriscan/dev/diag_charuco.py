@@ -3,7 +3,8 @@
 import cv2
 import numpy as np
 import sys
-sys.path.insert(0, '1_biometriscan')
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from plate_config import get_plate
 
 PHOTOS = [

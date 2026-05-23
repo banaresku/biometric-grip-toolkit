@@ -10,6 +10,8 @@ That barrier is falling. The same measurement and fabrication pipeline that requ
 
 **This toolkit is an open implementation of that pipeline** — built initially for precision sport shooting grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
 
+→ [Demo results — pipeline running on a real hand photo](demo/)
+
 ---
 
 ## Philosophy

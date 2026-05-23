@@ -34,6 +34,25 @@ This toolkit is:
 
 ---
 
+## The Broader Principle
+
+This toolkit is a specific implementation of a general idea:
+
+```
+Measure a human body segment  →  Generate geometry from that measurement
+                               →  Produce a personalized physical interface
+```
+
+Applied here to the hand and a shooting grip. The same pipeline — with different measurement targets, different parametric models, different mounting geometry — applies anywhere a hand interface matters: surgical instruments, archery grips, fencing handles, prosthetic interfaces, professional tool handles, gaming peripherals.
+
+This is not a claim that this implementation is a reference standard. It is a working proof of concept for the approach — concrete enough to learn from, open enough to adapt.
+
+**Why this became feasible now.** The components required for this pipeline existed before, but the barrier was cost and integration complexity. That barrier has dropped sharply in the last few years: hand measurement that required a $10,000–50,000 scanner now works from two phone photos, or from an affordable handheld laser scanner ($1,000–2,000). Computer vision that required a research lab (MediaPipe) is now free and runs on a laptop CPU. Parametric CAD (FreeCAD) and desktop FDM printers ($300–600) complete the stack. The Korean Olympic archery team's custom 3D-printed grips required Hyundai's backing in 2016 because the technology demanded it. The same outcome is now reachable by a club with a printer.
+
+See [`docs/application_landscape.md`](docs/application_landscape.md) for a detailed breakdown of domains, precedents, and where the approach transfers directly versus where domain-specific work is needed.
+
+---
+
 ## What This Is
 
 Three independent, reusable tools that together form a pipeline:
@@ -67,25 +86,6 @@ Applies organic surface structure to any input mesh using Blender Geometry Nodes
 **Why open lattice structure for hand interfaces:** not aesthetics. Uniform ventilation eliminates local temperature gradients, distributing perspiration evenly across the contact surface. Rib-only contact prevents sweat film formation that makes solid surfaces slippery when wet. Distributed pressure points improve circulation during prolonged grip. These properties are commercially validated at Olympic competition level.
 
 Applicable to: any mesh where weight reduction, ventilation, or grip texture matters.
-
----
-
-## The Broader Principle
-
-This toolkit is a specific implementation of a general idea:
-
-```
-Measure a human body segment  →  Generate geometry from that measurement
-                               →  Produce a personalized physical interface
-```
-
-Applied here to the hand and a shooting grip. The same pipeline — with different measurement targets, different parametric models, different mounting geometry — applies anywhere a hand interface matters: surgical instruments, archery grips, fencing handles, prosthetic interfaces, professional tool handles, gaming peripherals.
-
-This is not a claim that this implementation is a reference standard. It is a working proof of concept for the approach — concrete enough to learn from, open enough to adapt.
-
-**Why this became feasible now.** The components required for this pipeline existed before, but the barrier was cost and integration complexity. That barrier has dropped sharply in the last few years: hand measurement that required a $10,000–50,000 scanner now works from two phone photos, or from an affordable handheld laser scanner ($1,000–2,000). Computer vision that required a research lab (MediaPipe) is now free and runs on a laptop CPU. Parametric CAD (FreeCAD) and desktop FDM printers ($300–600) complete the stack. The Korean Olympic archery team's custom 3D-printed grips required Hyundai's backing in 2016 because the technology demanded it. The same outcome is now reachable by a club with a printer.
-
-See [`docs/application_landscape.md`](docs/application_landscape.md) for a detailed breakdown of domains, precedents, and where the approach transfers directly versus where domain-specific work is needed.
 
 ---
 

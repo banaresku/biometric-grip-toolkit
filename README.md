@@ -8,7 +8,7 @@ Historically, closing that gap required a specialist, expensive equipment, weeks
 
 That barrier is falling. The same measurement and fabrication pipeline that required institutional backing five years ago now runs on a laptop, a phone camera, a sub-$2,000 handheld scanner, and a desktop 3D printer available at any maker space or school. The expertise that was locked inside proprietary workflows is becoming reproducible.
 
-**This toolkit is an open implementation of that pipeline** — built initially for precision sport shooting grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
+**This toolkit is an open implementation of that pipeline** — built initially for precision sport equipment grips, designed to generalize. A coach with a printer, a clinic with a scanner, a maker with a camera: the same method, the same quality of outcome.
 
 → [Demo results — pipeline running on a real hand photo](demo/)
 
@@ -45,7 +45,7 @@ Measure a human body segment  →  Generate geometry from that measurement
                                →  Produce a personalized physical interface
 ```
 
-Applied here to the hand and a shooting grip. The same pipeline — with different measurement targets, different parametric models, different mounting geometry — applies anywhere a hand interface matters: surgical instruments, archery grips, fencing handles, prosthetic interfaces, professional tool handles, gaming peripherals.
+Applied here to the hand and a sport equipment grip. The same pipeline — with different measurement targets, different parametric models, different mounting geometry — applies anywhere a hand interface matters: surgical instruments, archery grips, fencing handles, prosthetic interfaces, professional tool handles, gaming peripherals.
 
 This is not a claim that this implementation is a reference standard. It is a working proof of concept for the approach — concrete enough to learn from, open enough to adapt.
 

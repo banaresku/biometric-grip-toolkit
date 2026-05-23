@@ -291,12 +291,7 @@ def to_freecad_params(raw: dict, dims: dict, classification: dict) -> dict:
         'hand_type':            classification['hand_type'],
         'grip_size':            classification['size'],
 
-        # === МОНТАЖ FWB 800X (фиксированные — вымерять!) ===
-        'fwb_screw_1_y':        0,    # TODO
-        'fwb_screw_2_y':        0,    # TODO
-        'fwb_screw_dia':        4.0,  # M4, проверить
-        'fwb_rail_width':       0,    # TODO
-        'fwb_rail_depth':       0,    # TODO
+        # === Mounting geometry — loaded from mount_points/<device>.json ===
     }
 
 

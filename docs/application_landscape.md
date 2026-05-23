@@ -49,7 +49,7 @@ This is not incremental improvement — it is a category shift in who can execut
 - The adjustment philosophy (modular, measurable, reproducible)
 
 **Requires domain-specific work:**
-- Mounting geometry (FWB 800X → surgical handle → archery riser → different JSON)
+- Mounting geometry (sport equipment → surgical handle → archery riser → different JSON)
 - Regulatory path (sport equipment → medical device → entirely different process)
 - Material constraints (PETG for grip → biocompatible PA12 for medical → same print, different validation)
 - Measurement scope (hand surface → residual limb volume → different capture method needed)
@@ -68,7 +68,7 @@ Organized by domain. Concrete examples and precedents wherever found.
 ### Target Pistol Shooting (primary use case)
 - **Direct precedent**: Athletics 3D (France) — custom 3D-printed grips for Olympic athletes using 3D scanning + Zortrax FDM. French silver medallist Céline Goberville used one at European Championships, scored 391 (tied Olympic record at the time).
 - **Commercial equivalent**: MeshPro (Germany) — €260-350, 8-10 weeks, closed algorithm. SmartGrip, Rink (handcraft wood).
-- **Pipeline fit**: 100% — this is what the toolkit was built for. FWB 800X is the reference mount.
+- **Pipeline fit**: 100% — this is what the toolkit was built for. Precision pistol/rifle platforms are the first implementation; different `mount_points.json` for each.
 - **Other platforms**: Walther LP500, Feinwerkbau 900, Steyr LP50 — same grip geometry problem, different mounting geometry (`mount_points.json`).
 - **Rifle shooting**: Air rifle and smallbore free rifle grips are anatomically fitted on the same principle — palm rest, thumb shelf, trigger reach all biometrically driven.
 - **Biathlon**: Biathlon rifle grip is held differently (standing, kneeling, prone) — less anatomic customization, but trigger reach and palm shelf still matter.

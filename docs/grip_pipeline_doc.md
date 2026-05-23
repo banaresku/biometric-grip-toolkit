@@ -1,11 +1,11 @@
 # Biometric Grip Pipeline
-## FWB 800X — Full Development Stack
+## Precision Sport Equipment Grip — Full Development Stack
 
 ---
 
 ## Overview
 
-Трёхуровневый pipeline для генерации анатомической рукоятки под конкретную ладонь стрелка.
+Трёхуровневый pipeline для генерации анатомической рукоятки под конкретную ладонь.
 
 ```
 ИСТОЧНИК ДАННЫХ (на выбор)
@@ -24,7 +24,7 @@
               ↓
          grip_dimensions.json + freecad_params
               ↓
-[FreeCAD] Параметрический скелет + монтажные точки FWB
+[FreeCAD] Параметрический скелет + монтажные точки оборудования
               ↓ STEP
 [Fusion 360] Loft, органика, T-Splines, финальный solid
               ↓ STL/OBJ
@@ -829,13 +829,7 @@ wrist_width         = 71.0   # мм
 grip_height         = 68.0   # мм
 trigger_reach       = 55.0   # мм
 
-# Монтаж FWB 800X (фиксированные!)
-fwb_screw_1_x       = 0.0    # мм (центр)
-fwb_screw_1_y       = 15.0   # мм от низа
-fwb_screw_2_y       = 45.0   # мм от низа
-fwb_screw_dia       = 4.0    # мм (M4)
-fwb_rail_width      = 18.0   # мм (уточнить с оригинала!)
-fwb_rail_depth      = 6.0    # мм
+# Монтаж (из mount_points/<device>.json — специфичен для оборудования)
 
 # Параметры рукоятки
 thumb_shelf_angle   = 15.0   # градусов
@@ -948,7 +942,7 @@ Mesh.export([shape], "/output/grip_skeleton.stl")
    - pinky groove
 5. Solid workspace:
    - Shell (толщина стенок 2.5мм минимум)
-   - Монтажные отверстия FWB (из параметров)
+   - Монтажные отверстия (из mount_points.json)
    - Fillet на острых краях (R2-4мм)
 6. Export → STL / STEP
 ```
@@ -957,7 +951,7 @@ Mesh.export([shape], "/output/grip_skeleton.stl")
 
 ```
 SOLID зоны (не трогать в Blender):
-  - Монтажная площадка FWB (верх)
+  - Монтажная площадка (верх)
   - Отверстия под винты ±5мм
   - Нижняя часть wrist (структурная)
 
@@ -982,7 +976,7 @@ finger_contact        5.5     dense       пальцы + thenar
 palm_contact          4.5     medium      основной контакт ладони
 thumb_shelf           5.0     med-dense   упор большого пальца
 backstrap_outer       3.0     open        тыльная сторона — max открытая
-solid                 —       solid       монтаж FWB, отверстия ±6мм
+solid                 —       solid       монтажная зона, отверстия ±6мм
 ```
 
 **Рёбра — минимум 5мм, сечение овальное (aspect ratio 1.6):**
@@ -1146,7 +1140,6 @@ grip_project/
 
 ## TODO / Итерации
 
-- [ ] Снять точные размеры монтажа FWB 800X (fwb_rail_width, fwb_screw_*)
 - [ ] Первый прототип — plain solid без Voronoi (проверка посадки)
 - [ ] Примерка → корректировка palm_swell_y_pct и thumb_shelf_angle
 - [ ] Второй прототип — с Voronoi на боковых панелях

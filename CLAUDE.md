@@ -13,7 +13,7 @@ Three independent open source tools for generating ergonomic grip geometry from 
 BiometriScan  →  ParamGrip  →  VoroShell
 ```
 
-Primary target: FWB 800X grip (ISSF Olympic sport).
+Primary target: precision sport equipment grips (ISSF Olympic sport, first implementations).
 Designed to generalize to any hand-held object.
 
 Philosophy: open source, free stack, accessible to any club worldwide.
@@ -43,7 +43,7 @@ biometric-grip-toolkit/
 │   ├── templates/
 │   │   └── grip_base_template.FCStd ← parametric skeleton (TODO)
 │   └── mount_points/
-│       └── fwb_800x.json            ← FWB 800X mounting geometry (TODO: measure)
+│       └── <device>_mount.json       ← mounting geometry per equipment type
 │
 ├── 3_voroshell/
 │   ├── voronoi_apply.py             ← bpy automation with zone masking (TODO)
@@ -135,12 +135,8 @@ palm_width_max, palm_length, palm_depth_max
 grip_thickness_rec, palm_swell_y_pct
 wrist_width, grip_height, trigger_reach_est
 
-# FWB 800X mounting (FIXED — must be measured from real hardware)
-fwb_screw_1_y = ?   ← TODO: measure
-fwb_screw_2_y = ?   ← TODO: measure
-fwb_screw_dia = M4  ← verify
-fwb_rail_width = ?  ← TODO: measure
-fwb_rail_depth = ?  ← TODO: measure
+# Mounting geometry (per equipment type — loaded from mount_points/<device>.json)
+# screw positions, rail dimensions, face geometry — all equipment-specific
 ```
 
 ### Cross-Sections for Loft (bottom to top)
@@ -268,11 +264,10 @@ This toolkit target: €30-50 material + 1-3 days, biometrically fitted.
 
 ## Open Questions / Active TODOs
 
-- [ ] Measure FWB 800X mounting geometry (screws, rail, face dimensions)
 - [ ] Print and field-test ChArUco plates + cylinder set
 - [ ] FreeCAD template: grip_base_template.FCStd
 - [ ] Blender script: voronoi_apply.py with zone masking
-- [ ] Full Voronoi grip prototype on FWB 800X
+- [ ] Full Voronoi grip prototype on real equipment
 - [ ] Field test: PBT vs PETG on wet hand + Voronoi surface
 - [ ] Document results in /docs/field_tests/
 
